@@ -20,7 +20,10 @@
 # Learn more: http://github.com/javan/whenever
 #
 set :output, "/home/deploy/cron_log.log"
+env :PATH, ENV['PATH']
+env :BUNDLE_PATH, ENV['BUNDLE_PATH']
+set :environment, "production"
 
-every 10.minutes do
+every 5.minutes do
   rake "scrape:houses"
 end
