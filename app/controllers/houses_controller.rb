@@ -3,7 +3,7 @@ class HousesController < ApplicationController
 
   # GET /houses or /houses.json
   def index
-    @houses = House.all.order(created_at: :desc)
+    @houses = House.all.order(publish_date: :desc)
   end
 
   def scrape
